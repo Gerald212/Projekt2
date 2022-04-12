@@ -50,6 +50,20 @@
             android:onClick="buttonDisplayDataOnClick"
             android:text="Wyświetl" />
 
+        <EditText
+            android:id="@+id/editTextTextDeleteId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Id do usunięcia"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/buttonDeleteData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Usuń użytkownika o podanym id" />
+
         <TextView
             android:id="@+id/textViewData"
             android:layout_width="match_parent"

@@ -14,9 +14,14 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+//Na androidzie 11+ trzeba do manifestu dodac
+// <queries>
+//<package android:name="nazwa.providera" />
+//</queries>
+
 public class MainActivity extends AppCompatActivity {
 
-    EditText NameInput, DescriptionInput;
+    EditText NameInput, DescriptionInput, IdToDeleteInput;
     TextView ResultTextView;
     private Snackbar mySnackbar;
 
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         NameInput = (EditText) findViewById(R.id.editTextTextName);
         DescriptionInput = (EditText) findViewById(R.id.editTextTextDescription);
+        IdToDeleteInput = (EditText) findViewById(R.id.editTextTextDeleteId);
         ResultTextView = (TextView) findViewById(R.id.textViewData);
 
     }
@@ -47,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         NameInput.setText("");
         DescriptionInput.setText("");
     }
+
+//    public void buttonDeleteDataOnClick(View view){
+//        int id = Integer.parseInt(IdToDeleteInput.getText().toString());
+//        getContentResolver().delete(MyContentProvider.CONTENT_URI);
+//    }
 
     @SuppressLint("Range")
     public void displayDataFromDB(){
