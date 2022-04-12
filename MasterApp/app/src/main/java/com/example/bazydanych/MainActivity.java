@@ -54,10 +54,17 @@ public class MainActivity extends AppCompatActivity {
         DescriptionInput.setText("");
     }
 
-//    public void buttonDeleteDataOnClick(View view){
-//        int id = Integer.parseInt(IdToDeleteInput.getText().toString());
-//        getContentResolver().delete(MyContentProvider.CONTENT_URI);
-//    }
+    public void buttonDeleteDataOnClick(View view){
+        int id = Integer.parseInt(IdToDeleteInput.getText().toString());
+        //getContentResolver().delete(MyContentProvider.CONTENT_URI);
+        getContentResolver().delete(MyContentProvider.CONTENT_URI,MyContentProvider.id + "=" + id, null);
+
+        mySnackbar = Snackbar.make(view, "Usunięto użytkownika", 2000);
+        mySnackbar.show();
+
+        displayDataFromDB();
+        IdToDeleteInput.setText("");
+    }
 
     @SuppressLint("Range")
     public void displayDataFromDB(){
