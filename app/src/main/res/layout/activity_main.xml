@@ -40,14 +40,14 @@
             android:id="@+id/buttonInsertData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="butonInsertDataOnClick"
+            android:onClick="buttonInsertDataOnClick"
             android:text="Dodaj" />
 
         <Button
             android:id="@+id/buttonDisplayData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="butonDisplayDataOnClick"
+            android:onClick="buttonDisplayDataOnClick"
             android:text="Wyświetl" />
 
         <TextView
