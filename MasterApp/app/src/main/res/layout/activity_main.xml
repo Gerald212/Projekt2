@@ -56,7 +56,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Id do usunięcia"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/buttonDeleteData"
@@ -67,7 +68,7 @@
         <TextView
             android:id="@+id/textViewData"
             android:layout_width="match_parent"
-            android:layout_height="147dp"
+            android:layout_height="match_parent"
             android:textSize="16sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

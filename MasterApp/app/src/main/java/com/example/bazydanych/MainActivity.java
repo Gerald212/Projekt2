@@ -69,8 +69,6 @@ public class MainActivity extends AppCompatActivity {
             StringBuilder strBuild = new StringBuilder();
             strBuild.append("Id | Nazwa | Opis\n");
             while (!cursor.isAfterLast()) {
-                //strBuild.append("\n" + cursor.getString(cursor.getColumnIndex("id")) + "-" + cursor.getString(cursor.getColumnIndex("name")));
-                //strBuild.append("Id: " + cursor.getString(cursor.getColumnIndex("id")) + " Nazwa: " + cursor.getString(cursor.getColumnIndex("name")) + " Opis: " + cursor.getString(cursor.getColumnIndex("description")) + "\n");
                 strBuild.append(cursor.getString(cursor.getColumnIndex("id")) + " " + cursor.getString(cursor.getColumnIndex("name")) + " " + cursor.getString(cursor.getColumnIndex("description")) + "\n");
 
                 cursor.moveToNext();
