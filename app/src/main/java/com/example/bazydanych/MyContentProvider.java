@@ -19,7 +19,7 @@ public class MyContentProvider extends ContentProvider {
     public MyContentProvider() {
     }
 
-    static final String PROVIDER_NAME = "com.demo.user.provider";
+    static final String PROVIDER_NAME = "com.bazydanych.user.provider";
 
     static final String URL = "content://" + PROVIDER_NAME + "/users";
 

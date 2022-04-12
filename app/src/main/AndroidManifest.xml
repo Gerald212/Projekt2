@@ -11,7 +11,7 @@
         android:theme="@style/Theme.BazyDanych">
         <provider
             android:name=".MyContentProvider"
-            android:authorities="com.demo.user.provider"
+            android:authorities="com.bazydanych.user.provider"
             android:enabled="true"
             android:exported="true"
         />

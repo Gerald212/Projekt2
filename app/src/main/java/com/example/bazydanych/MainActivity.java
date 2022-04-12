@@ -2,6 +2,7 @@ package com.example.bazydanych;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
@@ -41,24 +42,38 @@ public class MainActivity extends AppCompatActivity {
 
         mySnackbar = Snackbar.make(view, "Dodano użytkownika", 2000);
         mySnackbar.show();
+
+        displayDataFromDB();
+        NameInput.setText("");
+        DescriptionInput.setText("");
     }
 
-    public void buttonDisplayDataOnClick(View view){
-        
-        Cursor cursor = getContentResolver().query(Uri.parse("content://com.demo.user.provider/users"), null, null, null, null);
+    @SuppressLint("Range")
+    public void displayDataFromDB(){
+        Cursor cursor = getContentResolver().query(Uri.parse("content://com.bazydanych.user.provider/users"), null, null, null, null);
 
         // iteration of the cursor
         // to print whole table
         if(cursor.moveToFirst()) {
-            StringBuilder strBuild=new StringBuilder();
+            StringBuilder strBuild = new StringBuilder();
+            strBuild.append("Id | Nazwa | Opis\n");
             while (!cursor.isAfterLast()) {
-                strBuild.append("\n" + cursor.getString(cursor.getColumnIndex("id")) + "-" + cursor.getString(cursor.getColumnIndex("name")));
+                //strBuild.append("\n" + cursor.getString(cursor.getColumnIndex("id")) + "-" + cursor.getString(cursor.getColumnIndex("name")));
+                //strBuild.append("Id: " + cursor.getString(cursor.getColumnIndex("id")) + " Nazwa: " + cursor.getString(cursor.getColumnIndex("name")) + " Opis: " + cursor.getString(cursor.getColumnIndex("description")) + "\n");
+                strBuild.append(cursor.getString(cursor.getColumnIndex("id")) + " " + cursor.getString(cursor.getColumnIndex("name")) + " " + cursor.getString(cursor.getColumnIndex("description")) + "\n");
+
                 cursor.moveToNext();
             }
             ResultTextView.setText(strBuild);
         }
         else {
-            ResultTextView.setText("No Records Found");
+            ResultTextView.setText("Brak wpisów w bazie!");
         }
+    }
+
+    public void buttonDisplayDataOnClick(View view){
+        displayDataFromDB();
+        mySnackbar = Snackbar.make(view, "Wyświetlono dane z bazy", 2000);
+        mySnackbar.show();
     }
 }
